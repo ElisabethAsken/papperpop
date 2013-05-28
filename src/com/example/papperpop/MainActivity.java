@@ -18,7 +18,7 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
+		setContentView(R.layout.main); //Satte en egen Layout här för gissar att ni skall ha en för aktiviteten samt en annan för dialogrutan???
 //		
 		dialog = new Dialog(MainActivity.this); //Detta låg efter onClicklistener vilket innebar att knapparna inte fanns 
 		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
