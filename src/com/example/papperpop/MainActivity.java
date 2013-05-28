@@ -18,19 +18,18 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-		
-		Button yes = (Button) dialog.findViewById(id.button1);
-		yes.setOnClickListener(dialogListener);
-		
-		Button no = (Button) dialog.findViewById(id.button2);
-		no.setOnClickListener(dialogListener);
-		
-		dialog = new Dialog(MainActivity.this);
+		setContentView(R.layout.main);
+//		
+		dialog = new Dialog(MainActivity.this); //Detta låg efter onClicklistener vilket innebar att knapparna inte fanns 
 		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		dialog.setContentView(R.layout.activity_main);
+		dialog.setContentView(R.layout.dialog_layout); //Här läses knapparna in innan dess kan man inte leta upp dem med findviewById
 		dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
 		
+		Button yes = (Button) dialog.findViewById(R.id.button1); //Här var det lite fel stod id.button1 ???
+		yes.setOnClickListener(dialogListener);
+		
+		Button no = (Button) dialog.findViewById(R.id.button2);
+		no.setOnClickListener(dialogListener);
 
 	}
 		
